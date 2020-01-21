@@ -8,11 +8,13 @@ services:
         container_name: django_mysql
         image: mysql
         environment:
-            - MYSQL_ROOT_PASSWORD=dbpass01
-            - MYSQL_DATABASE=django
-        command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+            MYSQL_ROOT_PASSWORD: dbpass01
+            MYSQL_DATABASE: django
+            MYSQL_USER: django
+            MYSQL_PASSWORD: django
         volumes:
             - db-container
+            - ./mysql-confd/my.cnf:/etc/mysql/conf.d/my.cnf
         depends_on:
             - db-container
         restart: always
