@@ -15,6 +15,8 @@ services:
         volumes:
             - db-container
             - ./mysql-confd/my.cnf:/etc/mysql/conf.d/my.cnf
+        ports:
+            - 3306:3306
         depends_on:
             - db-container
         restart: always
