@@ -45,6 +45,12 @@ services:
         depends_on:
             - db
         restart: always
+        environment:
+            - DB_NAME=django
+            - DB_USER=django
+            - DB_PASSWORD=django
+            - DB_HOST=db
+            - DB_PORT=3306
     web_front:
         container_name: react_web_front
         build:

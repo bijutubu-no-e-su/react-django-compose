@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import rest_framework
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -58,7 +59,7 @@ MIDDLEWARE = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,15 +86,15 @@ WSGI_APPLICATION = 'first_project.wsgi.application'
 #}
 
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'django',
-            'USER': 'django',
-            'PASSWORD': 'django',
-            'HOST': 'db',
-            'PORT': '3306',
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -117,15 +118,21 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ja'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
+
+DATETIME_FORMAT = '%Y/%m/%d %H:%M:%S'
+
+DATETIME_INPUT_FORMATS = [
+    DATETIME_FORMAT,
+]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -136,3 +143,56 @@ STATIC_URL = '/static/'
 CORS_ORIGIN_WHITELIST = (
         'http://localhost:3000',
 )
+
+
+# Logging
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'all': {
+            'format': '%(asctime)s [%(levelname)s] %(pathname)s:%(lineno)d '
+                      '%(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'all',
+        },
+        'file': {  # どこに出すかの設定に名前をつける `file`という名前をつけている
+            'level': 'DEBUG',  # DEBUG以上のログを取り扱うという意味
+            'class': 'logging.handlers.RotatingFileHandler',  # ログを出力するためのクラスを指定
+            'filename': os.path.join(BASE_DIR, 'logs', 'django', 'django.log'),  # どこに出すか
+            'formatter': 'all',  # どの出力フォーマットで出すかを名前で指定
+            'maxBytes': 1024 * 1024 * 100,  # サイズ（100MB)
+            'backupCount': 7,  # 世代数
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
+}
+
+# rest framework
+
+REST_FRAMEWORK = {
+    # Pagination
+    'DEFAULT_PAGINATION_CLASS': 'common.drf.pagination.CommonPagination',
+    'PAGE_SIZE': 20,
+    # Filters
+    # 'DEFAULT_FILTER_BACKENDS': (
+    #     'django_filters.rest_framework.DjangoFilterBackend',
+    # ),
+    # login required
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DATETIME_FORMAT': DATETIME_FORMAT,
+}
