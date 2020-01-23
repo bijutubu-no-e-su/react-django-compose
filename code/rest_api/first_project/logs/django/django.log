@@ -1,0 +1,25 @@
+2020-01-24 00:31:29,648 [INFO] /usr/local/lib/python3.7/site-packages/django/utils/autoreload.py:598 Watching for file changes with StatReloader
+2020-01-24 00:32:33,418 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 00:32:33,552 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 00:32:43,193 [INFO] /usr/local/lib/python3.7/site-packages/django/utils/autoreload.py:598 Watching for file changes with StatReloader
+2020-01-24 01:01:03,459 [INFO] /usr/local/lib/python3.7/site-packages/django/utils/autoreload.py:222 /code/first_project/first_project/settings.py changed, reloading.
+2020-01-24 01:01:03,470 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 01:01:04,056 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 01:01:25,619 [INFO] /usr/local/lib/python3.7/site-packages/django/utils/autoreload.py:598 Watching for file changes with StatReloader
+2020-01-24 01:01:54,810 [WARNING] /usr/local/lib/python3.7/site-packages/django/utils/log.py:228 Forbidden: /api/profile/
+2020-01-24 01:03:27,878 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 01:03:28,054 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 01:03:44,084 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 01:04:05,526 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 01:04:45,569 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 01:04:55,508 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 01:11:01,550 [INFO] /usr/local/lib/python3.7/site-packages/django/utils/autoreload.py:598 Watching for file changes with StatReloader
+2020-01-24 01:11:04,957 [WARNING] /usr/local/lib/python3.7/site-packages/django/utils/log.py:228 Forbidden: /api/profile/
+2020-01-24 01:11:12,010 [WARNING] /usr/local/lib/python3.7/site-packages/django/utils/log.py:228 Forbidden: /api/profile/
+2020-01-24 01:17:15,951 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 01:17:16,130 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 01:17:23,296 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 01:17:58,837 [INFO] /usr/local/lib/python3.7/site-packages/django/utils/autoreload.py:598 Watching for file changes with StatReloader
+2020-01-24 01:18:32,139 [WARNING] /usr/local/lib/python3.7/site-packages/django/utils/log.py:228 Not Found: /
+2020-01-24 01:19:13,777 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
+2020-01-24 01:19:13,957 [DEBUG] /usr/local/lib/python3.7/asyncio/selector_events.py:58 Using selector: EpollSelector
