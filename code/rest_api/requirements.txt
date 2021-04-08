@@ -1,4 +1,4 @@
-Django==3.0.2
+Django==3.0.14
 django-bootstrap4==1.0.1
 mysqlclient==1.4.4
 urllib3==1.25.3
